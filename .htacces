@@ -9,5 +9,5 @@ SetEnv DB_USER_NAME
 SetEnv DB_SERVER_NAME
 
 # put the path where you put the code
-SetEnv ROOT_PATH 
+SetEnv ROOT_PATH  
 
