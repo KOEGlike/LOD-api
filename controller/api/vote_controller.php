@@ -19,18 +19,18 @@ class VoteController extends BaseController
         {
             array_push($err, "id was not sent");
         }
-        elseif(!is_numeric($_POST["id"])){
+        /*elseif(!is_numeric($_POST["id"])){
             array_push($err, "id is not intager");
-        }
+        }*/
 
         if(!$_POST["isyes"]&&!isset($_POST["isyes"]))
         {
             array_push($err, "isyes was not sent.");
         }
-        elseif (!is_bool($_POST["isyes"]))
+        /*elseif (!is_bool($_POST["isyes"]))
         {
             array_push($err, 'isyes is not true or false');
-        }
+        }*/
         
         if($err!=[])
         {

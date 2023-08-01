@@ -63,7 +63,7 @@ class UploadController extends BaseController
             $this->sendResponse(500, ["message" => $e->getMessage()]);
         }
        
-        $targetDir = $this->$dir."/images/$lastSopId";
+        $targetDir = $dir."/images/$lastSopId";
         
         try
         {
@@ -98,10 +98,10 @@ class UploadController extends BaseController
         {
             array_push($err, "Id variable was not sent. ");
         }
-        elseif(!is_numeric($_POST["id"]))
+        /*elseif(!is_numeric($_POST["id"]))
         {
             array_push($err, "Id variable is not an integer. ");
-        }
+        }*/
         
         $uploadedPhoto = $_FILES['file'];
         $id = $_POST["id"];

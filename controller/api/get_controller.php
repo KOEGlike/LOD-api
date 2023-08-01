@@ -21,10 +21,10 @@ class GetController extends BaseController{
       {
        array_push($err, "Id querry param was not set.") ;
       }
-      elseif(is_numeric($params['id']))
+      /*elseif(is_numeric($params['id']))
       {
         array_push($err, "Id querry param is not integer.") ;
-      }
+      }*/
       
       if($err!= [])
       {
