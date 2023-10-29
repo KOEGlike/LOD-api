@@ -37,7 +37,7 @@ class ImagesModel extends DataBase
                 }
                 else
                 {
-                    $this->executeStatement("UPDATE kepek SET votes = votes-1, votes_amount = votes_amount + 1 WHERE id = :id",[[":id", $id]]);
+                    $this->executeStatement("UPDATE kepek SET votes = votes-1, votes_amount = votes_amount - 1 WHERE id = :id",[[":id", $id]]);
                 }
                 
             }
