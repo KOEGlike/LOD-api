@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kepek`
+-- Table structure for table `photos`
 --
 
 CREATE TABLE `photos` (
@@ -51,7 +51,7 @@ CREATE TABLE `LODs` (
 --
 
 --
--- Indexes for table `kepek`
+-- Indexes for table `photos`
 --
 ALTER TABLE `photos`
   ADD PRIMARY KEY (`id`),
@@ -68,7 +68,7 @@ ALTER TABLE `LODs`
 --
 
 --
--- AUTO_INCREMENT for table `kepek`
+-- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
@@ -84,12 +84,12 @@ ALTER TABLE `LODs`
 --
 
 --
--- Constraints for table `kepek`
+-- Constraints for table `photos`
 --
 ALTER TABLE `photos`
   ADD CONSTRAINT `photos_ibfk_1` FOREIGN KEY (`LODid`) REFERENCES `LODs` (`id`);
 COMMIT;
-
+ 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

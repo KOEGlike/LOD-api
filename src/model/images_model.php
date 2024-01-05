@@ -7,8 +7,8 @@ class ImagesModel extends DataBase
     public function insertImage(int $originId,string $fileName):void
     {
         try{
-            $this->executeStatement ('INSERT INTO kepek (file_Name, origin_id) VALUES (:name, :origin_id )', 
-        [[':name',$fileName],[':origin_id',$originId]]);
+            $this->executeStatement ('INSERT INTO photos (fileName, LODid) VALUES (:name, :LODid )', 
+        [[':name',$fileName],[':LODid',$originId]]);
         }
         catch(Exception $e)
         {
@@ -20,7 +20,7 @@ class ImagesModel extends DataBase
     {
         
         try {
-            $images = $this->select("SELECT * FROM kepek WHERE origin_id = :value",[[":value", $originId]]);
+            $images = $this->select("SELECT * FROM photos WHERE LODid = :value",[[":value", $originId]]);
         } catch (Exception $e) {
             throw $e;
         }
@@ -33,11 +33,11 @@ class ImagesModel extends DataBase
             {
                 if ($isYes == true)
                 {
-                    $this->executeStatement("UPDATE kepek SET votes = votes+1, votes_amount = votes_amount + 1 WHERE id = :id",[[":id", $id]]);
+                    $this->executeStatement("UPDATE photos SET likes = likes+1 WHERE id = :id",[[":id", $id]]);
                 }
                 else
                 {
-                    $this->executeStatement("UPDATE kepek SET votes = votes-1, votes_amount = votes_amount - 1 WHERE id = :id",[[":id", $id]]);
+                    $this->executeStatement("UPDATE photos SET  dislikes = dislikes + 1 WHERE id = :id",[[":id", $id]]);
                 }
                 
             }

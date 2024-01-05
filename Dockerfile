@@ -14,16 +14,13 @@ RUN apt-get update && apt-get install -y \
 
 
 # Copy the application code to the container
-COPY ./src ./src
-COPY nginx.conf /etc/nginx/conf.d/
+COPY ./src ./src \ nginx.conf /etc/nginx/conf.d/
 
 RUN docker-php-ext-install pdo
 VOLUME /var/lib/mysql
 
 # Expose port 80 for Apache
 EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
 
 # Use the official MySQL image
 FROM mysql:latest
@@ -37,3 +34,5 @@ COPY model.sql /docker-entrypoint-initdb.d
 
 # Expose port 3306 for MySQL
 EXPOSE 3306
+
+CMD ["nginx", "-g", "daemon off;"]

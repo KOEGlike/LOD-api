@@ -6,7 +6,7 @@ class LodModel extends DataBase
     public function insertNew(string $name) :int
     {
         try{
-        $this->executeStatement('INSERT INTO  sopNames(name) VALUES (:name)', [[':name', $name]]);
+        $this->executeStatement('INSERT INTO  LODs(name) VALUES (:name)', [[':name', $name]]);
         }
         catch(Exception $e)
         {
@@ -19,7 +19,7 @@ class LodModel extends DataBase
 
     public function getLOD(int $id) :array
     {
-        $LOD=$this->select("SELECT * FROM sopNames WHERE id = :value",[[":value", $id]]);
+        $LOD=$this->select("SELECT * FROM LODs WHERE id = :value",[[":value", $id]]);
         return $LOD;
     }
 }
